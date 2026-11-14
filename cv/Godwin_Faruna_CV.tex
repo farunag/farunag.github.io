@@ -1,0 +1,154 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[left=47pt,right=57pt,top=50pt,bottom=62pt]{geometry}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\emergencystretch=2em
+
+% ---- layout: a label column on the left, content on the right ----
+\newlength{\cvindent}
+\setlength{\cvindent}{86pt}
+\newcommand{\cvsection}[1]{%
+  \par\addvspace{6.5pt}%
+  \noindent\hspace*{-\cvindent}%
+  \makebox[\cvindent][l]{\smash{\parbox[t]{\cvindent}{\raggedright\bfseries #1}}}%
+  \ignorespaces}
+\newcommand{\entrygap}{\par\vspace{3pt}}
+\newcommand{\dated}[2]{\textbf{#1}\hfill #2\par}
+\newcommand{\me}{\textbf{G. A. Faruna}}
+\setlist[itemize]{leftmargin=\dimexpr\cvindent+12.5pt\relax,labelsep=4.5pt,itemsep=2pt,topsep=3pt,parsep=0pt,partopsep=0pt,label=\textbullet}
+
+\begin{document}
+\raggedbottom
+
+\hspace*{10pt}{\LARGE\bfseries Godwin Abuh Faruna}\par\vspace{3pt}
+\noindent\hspace*{10pt}\makebox[\dimexpr\textwidth-10pt\relax][s]{\href{https://farunag.github.io}{https://farunag.github.io}\hfill Abuja, FCT, Nigeria\hfill +234 703 012 4044}\par
+\noindent\hspace*{10pt}\makebox[\dimexpr\textwidth-10pt\relax][s]{\href{mailto:farunagodwin01@gmail.com}{farunagodwin01@gmail.com}\hfill \href{https://github.com/farunag}{github.com/farunag}\hfill \href{http://linkedin.com/in/faruna-godwin-abuh-07a22213b/}{LinkedIn}}\par
+\vspace{1pt}
+
+\leftskip=\cvindent
+
+% ------------------------------------------------------------------
+\cvsection{Education}%
+\dated{Kaduna Polytechnic, Kaduna, Nigeria}{January 2018--February 2020}
+Higher National Diploma (HND), Electrical and Electronics Engineering\par
+CGPA: 3.2/4.0 (Upper Credit)\par
+Focus: Control Systems and Numerical Methods
+\entrygap
+\dated{Federal Polytechnic Idah, Kogi State, Nigeria}{December 2013--February 2016}
+National Diploma (ND), Electrical/Electronics Engineering\par
+CGPA: 2.97/4.0 (Lower Credit)
+
+% ------------------------------------------------------------------
+\cvsection{Publications}%
+\me, T. J. Zhang, M. Masiak, C. Ugwuanyi, and Z. Jin. Does Activation Steering Transfer Across Languages for Safety? [Long Paper]. Under review at ACL Rolling Review (ARR), October 2026.
+\entrygap
+\me, R. Mihalcea, and D. Dementieva. Tracing and Steering Text Detoxification Representations in Multilingual Language Models. [Long Paper]. Under review at ACL Rolling Review (ARR), October 2026.
+\entrygap
+N. K. M, S. Tanwisuth, and \me. Detectability Inversely Tracks Disruption: Reference-Free, Static-Weight Detection of Backdoored LoRA Adapters. [Long Paper]. Under review at the International Conference on Learning Representations, 2027 (ICLR '27).
+\entrygap
+\me. Cross-Lingual Transfer of Activation-Space Refusal Anchoring Against Adaptive GCG Attacks. [Short Paper]. To appear in GlobalSouthAI Workshop at the Conference on Neural Information Processing Systems, 2026 (NeurIPS '26).
+\entrygap
+\me. Latent Space Refusal Anchoring for Low-Resource African Languages: Mechanistic Safety Recovery Without Retraining. [Short Paper]. GlobalSouthML Workshop at the International Conference on Machine Learning, 2026 (ICML '26), Seoul.
+\entrygap
+\me. \href{https://openreview.net/forum?id=xLH4pHwnTO}{Multilingual Jailbreak Vulnerability Benchmark and Mitigation for Low-Resource African Languages}. [Short Paper]. GlobalSouthAI Workshop at the International Joint Conference on Artificial Intelligence, 2026 (IJCAI-ECAI '26).
+\entrygap
+\me. \href{https://arxiv.org/abs/2603.19273}{Refusal Centroid Drift: Mechanistic Analysis of Cross-Lingual Safety Failures in Frontier Models}. [Preprint]. arXiv:2603.19273, 2026.
+\entrygap
+\me\ and K. El Bairi. \href{https://futurium.ec.europa.eu/en/apply-ai-alliance/community-content/when-ai-forgets-its-safety-linguistic-decay-and-eu-ai-act-compliance-gaps}{When AI Forgets Its Safety: Linguistic Decay and EU AI Act Compliance Gaps}. [Policy Article]. EU AI Alliance, Futurium, 2026.
+
+% ------------------------------------------------------------------
+\cvsection{On-Going\\Work}%
+Persona Collapse: An Interpretability Workbench for Assistant Persona Drift in Long Conversations (Cosmos Institute Grant).
+\entrygap
+Head-Level Attribution for Refusal Circuits in Multilingual Language Models: A Follow-Up to ACDC-Style Circuit Discovery.
+\entrygap
+Cross-Lingual Transfer of Activation-Space Refusal Anchoring Against Adaptive GCG Attacks. Extending the NeurIPS '26 workshop paper into a full paper for the ICML 2027 main track (January 2027 submission).
+
+% ------------------------------------------------------------------
+\cvsection{Research\\Experience}%
+\dated{Jinesis AI Lab, University of Toronto}{June 2026--Present}
+Research Assistant (Predoctoral Program) with Prof. Zhijing Jin, on the multilingual mechanistic interpretability team.
+\begin{itemize}
+  \item Researching how safety-relevant representations transfer across languages, using linear probes, sparse autoencoders, and activation interventions.
+  \item Built a controlled multilingual planner, tool-caller and critic pipeline: across seven languages, low-resource languages often fail at the planner role, and the unsafe plan can pass the critic.
+  \item Tested role-targeted activation steering: planner-only steering helped in some low-resource settings; critic-only and joint steering were inconsistent.
+  \item First author on \textit{Does Activation Steering Transfer Across Languages for Safety?}, currently under review at ACL Rolling Review.
+\end{itemize}
+\entrygap
+\textbf{BlueDot Impact, Technical AI Safety Project Sprint}\par
+Independent research with BlueDot mentorship. Lead researcher on LSR-Anchoring, a training-free activation-steering method that restores safety refusals in low-resource African languages.
+\begin{itemize}
+  \item Designed the method end to end: prompt-set construction, native-speaker vetting for Igala and Yoruba, evaluation on Llama-3-8B, Llama-3.1-70B, Mistral-7B-Instruct, and Qwen2.5-7B, bootstrap CI analysis, and paper writing.
+  \item Recovered near-ceiling refusal on 70B models from English-derived directions (Yoruba and Igbo SRR 0.99); SAE-derived steering removed benign-prompt collapse for Igbo and Igala at 3.5--7$\times$ lower KL divergence than mean-difference steering. First interpretability-based safety work on Igala.
+  \item Stress-tested the method against adaptive GCG attacks, replicating Nasr et al. (2025): static anchoring cut English attack success from 1.00 to 0.60, and a white-box adaptive attacker reached only 0.80 at nearly twice the optimizer cost. The English-only anchor fully transferred to Igbo (ASR 0.00).
+  \item Identified a language-agnostic refusal feature (Feature 112639, layer 12, EleutherAI SAE on Llama-3-8B); direct logit attribution shows it promotes the Yoruba negation particle \textit{k\`o l\`e} alongside English refusal tokens.
+  \item Replicated and extended ACDC-style circuit discovery (Conmy et al., 2023) on Qwen2.5-7B-Instruct across English, Yoruba, Hausa, and Igala; circuit-targeted steering preserved benign helpfulness better than global residual-stream steering.
+  \item Measured assistant-persona drift over 30-turn conversations on Llama-3-8B in English, Hausa, and Yoruba, finding domain shapes persona more than language, with the weakest anchoring in metacognitive conversations.
+  \item Ported cross-lingual red-teaming benchmarks to the UK AI Security Institute's Inspect platform and built \href{https://huggingface.co/spaces/Faruna01/lsr-dashboard}{LSR Workbench}, a public Hugging Face Space for red-teaming and steering experiments.
+\end{itemize}
+\entrygap
+\dated{Nigerian Religious Coalition on AI}{December 2024--Present}
+Technical Lead. Coalition facilitated by the Future of Life Institute (FLI).
+\begin{itemize}
+  \item Leading the technical AI safety roadmap for West Africa, with a focus on cross-lingual safety standards.
+  \item Designing a Linguistic Integrity Stack to detect semantic and safety decay in AI deployed in regional languages.
+\end{itemize}
+
+% ------------------------------------------------------------------
+\cvsection{Industry\\Experience}%
+\dated{Fagmart LLC}{February 2023--June 2026}
+Senior Software Engineer
+\begin{itemize}
+  \item Architected backend services that cut API latency by 25\% for thousands of active users.
+  \item Ran containerised deployments on GCP with Docker and Kubernetes at 99.9\% uptime.
+  \item Mentored junior engineers on security-first coding, system design, and CI/CD.
+\end{itemize}
+
+% ------------------------------------------------------------------
+\cvsection{Teaching \&\\Facilitation}%
+Advanced Computer Applications and AI/ML Fundamentals. Training for 100+ senior staff, Federal Ministry of Innovation, Science and Technology, Abuja, November 2024.
+\entrygap
+Systemic Risks of Frontier AI in the Global South. Training for a national coalition of journalists, with the Future of Life Institute, Abuja, March 2026. Featured on AIT \textit{News Hour}.
+\entrygap
+AI Red Lines. Media briefing for religious leaders, Nigerian Religious Coalition on AI, Abuja, July 2026.
+\entrygap
+Facilitator, Successif Early-Career Peer Support Program\hfill Aug.--Oct. 2026\par
+\entrygap
+Organizer, BlueDot Impact Community Meet and Greet, Abuja\hfill February 2026\par
+
+% ------------------------------------------------------------------
+\cvsection{Media}%
+Emerging Technologies in Africa and Nigeria. Television interview, Sunshine TV, June 2024.
+
+% ------------------------------------------------------------------
+\cvsection{Awards}%
+2026 Cosmos Institute Summer Grant, Persona Collapse interpretability workbench -- US\$5,000
+\par
+2026 BlueDot Impact ICML Travel Grant, for presenting SAE-derived steering against cross-lingual and multi-agent persona drift -- US\$3,500
+\par
+2026 BlueDot Impact Rapid Grant, LSR-Anchoring Phase 2: ICML Sprint Scale-Up (Dense vs. MoE) -- US\$800
+\par
+2026 Jinesis AI Lab Compute Reimbursement, multilingual multi-agent experiments -- US\$500
+\par
+2026 BlueDot Impact Community Event Grant, Abuja Meet and Greet -- US\$200
+\par
+2026 BlueDot Impact Rapid Grant, Linguistic Safety Robustness: An Inspect-Eval Benchmark -- US\$150
+\par
+2026 Google Cloud TPU Compute Grant (one month of access) -- 32 on-demand and 32 spot TPU v4, 64 spot TPU v6e, and 64 spot TPU v5e chips
+
+% ------------------------------------------------------------------
+\cvsection{References}%
+Prof. Rada Mihalcea\par
+Professor of Computer Science and Engineering, University of Michigan
+\entrygap
+Prof. Zhijing Jin\par
+Assistant Professor of Computer Science, University of Toronto
+\entrygap
+Dr. Daryna Dementieva\par
+Postdoctoral Researcher, Technical University of Munich
+
+\end{document}
